@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 776px;
+			width: 1510px;
+			/*background-color: pink;*/
+		}
+
+		.menu{
+			/*background: url({% static "menu-background.jpg" %});*/
+			background-color: #3498DB;
+			height: 60px;
+			width: 1510px;
+			/*background-color: red;*/
+			/*margin-left: 150px;*/
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			/*margin-top: 10px;*/
+			float: left;
+		}
+
+		.menu #link{
+			/*background-color: green;*/
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+		}
+
+		.menu #link #li1 a{
+			color: white;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+               color: magenta;
+        }
+
+        .menu2{
+        	/*background-color: green;*/
+        	height: 100px;
+        	width: 1300px;
+        	margin-left: 150px;
+        }
+
+        .menu2 #logo{
+        	height: 100px;
+        	width: 470px;
+        	background: url({% static "logo.jpg" %});
+        	float: left;
+        }
+
+        .menu2 #link2{
+        	height: 100px;
+        	width: 800px;
+        	float: left;
+        }
+
+        .menu2 #link2 #li2{
+        	list-style: none;
+			position: relative;
+			left: 80px;
+			padding-top: 10px;
+			padding-right: 20px;
+        }
+
+        .menu2 #link2 #li2 li{
+        	display: inline;
+			margin: 20px;
+        }
+
+        .menu2 #link2 #li2 a{
+			text-decoration: none;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+               color: #43C6DB;
+        }
+
+        #pageDisplay{
+        	height: 50px;
+        	width: 1510px;
+        	/*background: url({% static "menu-background.jpg" %});*/
+        	background-color: #3498DB;
+        }
+
+        .menu3
+		{
+			height: 1000px;
+			width: 1510px;
+			background: url({% static "appointment-background-image.jpg" %});
+			background-repeat:repeat;	
+		}
+
+        #Main2
+        {
+         	height: 900px;
+         	width: 880px;
+         	background-color:#82CAFF;
+         	display: inline-block;
+        	*display: inline;
+        	margin-left: 420px;
+        	padding-top: 5px;
+        	top: 10px;
+        	color: black;
+        }
+
+        /*table, th, td {
+  			border: 1px solid black;
+		}*/
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		
+		<div class="menu">
+			<div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px black;color: yellow;font-size: 28px"> HEALTH WAVE </h2> </a> </div>
+			<div id="link">
+				<ol id="li1">
+					<h4>
+						<li id="select"> <a href="/appointment"> Book Appointment </a> </li>
+						<li> <a href="/donate"> Donate </a> </li>
+						<li> <a href="/login"> Login </a> </li>
+					</h4>
+				</ol>
+			</div>
+		</div>
+
+		<div class="menu2">
+			<a href="/home"> <div id="logo"></div> </a>
+			<div id="link2">
+				<ol id="li2">
+					<h3>
+						<li> <a href="/home"> Home </a> </li>
+						<li> <a href="/department"> Department </a> </li>
+						<li> <a href="/about"> About </a> </li>
+						<li> <a href="/contact"> Contact Us </a> </li>
+					</h3>
+				</ol>
+			</div>
+		</div>
+
+		<div id="pageDisplay">
+			<center> <h4 style="text-shadow:2px 2px 1px black;color: white;margin-top: 0px;font-size: 28px;">Fill Appointment Form</h4> </center>
+		</div>
+
+	<div class="menu3">
+		<div id="Main2">
+			<form action="/appointmentData">
+				<center>
+					<h1>Fill Appointment Form</h1>
+				</center>
+				<table align="center" cellpadding="10px" cellspacing="10px">
+			 		<h2 align="center">Requester Information</h2>
+			 		<tr>
+			 			<td> Who is this appointment for: </td>
+			 			<td>
+	            			<input type="radio" name="appointmentfor" id="self" value="self">
+	            			<label for="self">Self</label>
+	            			<input type="radio" name="appointmentfor" id="other" value="other">
+	            			<label for="other">Other</label>
+	       				</td>
+			 		</tr>
+
+					<tr>
+						<td>First Name:</td>
+						<td><input type="text" name="fname" id="fname"></td>
+					 	<td><span id="span_fname"></span></td>
+					</tr>
+					
+					<tr>
+						<td>Last Name:</td>
+						<td><input type="text" name="lname" id="lname"></td>
+						<td><span id="span_lname"></span></td>
+					</tr>
+				
+					<tr>
+						<td>Gender</td>
+					 	<td>
+            				<input type="radio" name="gender" id="male" value="male">
+            				<label for="male">Male</label>
+            				<input type="radio" name="gender" id="female" value="female">
+            				<label for="female">Female</label>
+       				  	</td>
+       				  	<td><span id="span_gender"></td>
+					</tr>
+			
+					<tr>
+						<td>Mobile Number:</td>
+						<td><input type="text" name="number" id="mobile number"></td>
+						<td><span id="span_contact"></td>
+					</tr>
+					
+					<tr>
+						<td>Birth Date:</td>
+					 	<td> Date:
+							<select name="DOBDay">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>						
+							</select>
+
+							Month:
+							<select name="DOBMonth">
+								<option value="January">January</option>
+								<option value="February">February</option>
+								<option value="March">March</option>
+								<option value="April">April</option>
+								<option value="May">May</option>
+								<option value="June">June</option>
+								<option value="July">July</option>
+								<option value="August">August</option>
+								<option value="September">September</option>
+								<option value="October">October</option>
+								<option value="November">November</option>
+								<option value="December">December</option>
+							</select>
+						</td>
+						<td>
+							Year:
+							<select name="DOBYear">
+								<option value="1990">1990</option>
+								<option value="1991">1991</option>
+								<option value="1992">1992</option>
+								<option value="1993">1993</option>
+								<option value="1994">1994</option>
+								<option value="1995">1995</option>
+								<option value="1996">1996</option>
+								<option value="1997">1997</option>
+								<option value="1998">1998</option>
+								<option value="1999">1999</option>
+							</select>
+        			  	</td>
+					</tr>
+					
+					<tr>
+						<td>Adress:</td>
+						<td><input type="text" name="adress"></td>
+					</tr>
+					<tr>
+						<td>Email adress</td>
+						<td><input type="text" name="email" id="email"></td>
+						<td><span id="span_email"></span></td>
+					</tr>
+				
+					<tr>
+						<td>State & City:</td>
+					 	<td>
+			            	<select name="state" id="state">
+			              		<option selected>--------Select--------</option>
+			              		<option value="Madhya Pradesh">Madhya Pradesh</option>
+			              		<option value="Maharashtra">Maharashtra</option>
+			              		<option value="Delhi">Delhi</option>
+			              		<option value="Gujrat">Gujrat</option>
+			            	</select>
+			        	</td>
+			        	<td>
+			            	<input type="text" name="city">
+        			  	</td>
+					</tr>
+					
+					<tr>
+						<td>Does the patient have health insurance?</td>
+						<td><input type="radio" name="healthinsurance" id="yes" value="yes">
+            					<label for="yes">Yes</label><br>
+            				<input type="radio" name="healthinsurance" id="no" value="no">
+            					<label for="no">No</label><br>
+            				<input type="radio" name="healthinsurance" id="international patient" value="international patient">
+            					<label for="international patient">International Patient</label>
+       				  	</td>
+       				</tr>
+
+       				<tr>
+       					<td>Have you previously attended our  facility</td>
+    	   				<td>
+	       					<input type="radio" name="facility" id="yes" value="yes">
+       							<label for="yes">Yes</label><br>
+       						<input type="radio" name="facility" id="no" value="no">
+       							<label for="no">No</label>
+       					</td>
+       				</tr>
+
+       				<tr>
+			 			<td> Select which appointment type(s) you require </td>
+			 			<td>
+	            			<input type="checkbox" name="appointmenttype" id="cervix checkup" value="cervix checkup">
+			            		<label for="cervix checkup">Cervix Checkup</label><br>
+	    	        		<input type="checkbox" name="appointmenttype" id="heartcheckup" value="heartcheckup">
+	        		    		<label for="heartcheckup">Heart Checkup</label><br>
+	            			<input type="checkbox" name="appointmenttype" id="eyecheckup" value="eyecheckup">
+	            				<label for="eyecheckup">Eye Checkup</label><br>
+	            			<input type="checkbox" name="appointmenttype" id="hearingtest" value="hearingtest">
+	            				<label for="hearingtest">Hearing Test</label>
+	       				  </td>
+			 		</tr>
+			 		<tr>
+				    	<td colspan="3">
+				            <center> <input type="submit" value="Sign Up" onclick="return validate()">
+				            	     <input type="reset" value="Reset">
+				            </center>
+				        </td>
+ 			        </tr>
+
+				    <script>
+        				function validate()
+        				{
+				        	var f_name=document.getElementById('fname');
+          					var l_name=document.getElementById('lname');
+          					var ma_le=document.getElementById('male');
+          					var fe_male=document.getElementById('female');
+          					var cont_num=document.getElementById('mobile number');
+          					var e_mail=document.getElementById('email');
+          
+          					if(f_name.value.trim()==="")
+          					{
+            					var span_fname=document.getElementById('span_fname');
+            					span_fname.innerHTML="Name is required";
+            					span_fname.style.color="red";
+            					f_name.focus();
+            					return false;
+         					}
+          					else
+          					{
+            					regu=/^[A-Za-z]+$/;
+            					if(regu.test(f_name.value))
+            					{
+              						var span_fname=document.getElementById('span_fname');
+              						span_fname.innerHTML="Valid";
+              						span_fname.style.color="white";
+            					}
+            					else
+            					{
+              						var span_fname=document.getElementById('span_fname');
+              						span_fname.innerHTML="Invalid";
+              						span_fname.style.color="red";
+              						f_name.focus();
+              						return false;
+            					}
+          					}
+
+          					if(l_name.value.trim()==="")
+          					{
+            					var span_lname=document.getElementById('span_lname');
+            					span_lname.innerHTML="Can't leave blank";
+            					span_lname.style.color="red";
+            					l_name.focus();
+            					return false;
+          					}
+          					else
+          					{
+            					regu1=/^[A-Za-z]+$/;
+            					if(regu1.test(l_name.value))
+            					{
+              						var span_lname=document.getElementById('span_lname');
+              						span_lname.innerHTML="Valid";
+              						span_lname.style.color="white";
+            					}
+            					else
+            					{
+              						var span_lname=document.getElementById('span_lname');
+              						span_lname.innerHTML="Invalid";
+              						span_lname.style.color="red";
+              						l_name.focus();
+              						return false;
+            					}
+          					}          
+          					
+          					if(ma_le.checked===false && fe_male.checked===false)
+          					{
+            					var span_gender=document.getElementById('span_gender');
+            					span_gender.innerHTML="Select Gender";
+            					span_gender.style.color="red";
+            					ma_le.focus();
+            					return false;
+          					}
+
+          					if(cont_num.value.trim()==="")
+          					{
+            					var span_contact=document.getElementById('span_contact');
+            					span_contact.innerHTML="Can't Leave Blank";
+            					span_contact.style.color="red";
+            					cont_num.focus();
+            					return false;
+          					}
+          					else
+          					{
+            					regu6=/^[789][0-9]{9}$/;
+            					if(regu6.test(cont_num.value))
+            					{
+              						var span_contact=document.getElementById('span_contact');
+              						span_contact.innerHTML="Valid";
+              						span_contact.style.color="white";
+            					}
+            					else
+            					{
+              						var span_contact=document.getElementById('span_contact');
+              						span_contact.innerHTML="Invalid";
+              						span_contact.style.color="red";
+              						cont_num.focus();
+              						return false;
+            					}
+          					}
+          					if(e_mail.value.trim()==="")
+          					{
+            					var span_email=document.getElementById('span_email');
+            					span_email.innerHTML="Can't leave blank";
+            					span_email.style.color="red";
+            					e_mail.focus();
+            					return false;
+          					}
+          					else
+          					{
+            					var regu2=/^\w+([\._]?\w+)*@\w+([\._]?\w+)*(\.\w{2,3})+$/;
+            					if(regu2.test(e_mail.value))
+            					{
+              						var span_email=document.getElementById('span_email');
+              						span_email.innerHTML="Valid";
+              						span_email.style.color="white";           
+            					}
+            					else
+            					{
+              						var span_email=document.getElementById('span_email');
+              						span_email.innerHTML="InValid";
+              						span_email.style.color="red";
+              						e_mail.focus();
+              						return false;
+            					}
+          					}        
+          				}
+      				</script>  		
+				</table>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
+				
+
+
+				

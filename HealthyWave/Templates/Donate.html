@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 776px;
+			width: 1510px;
+			/*background-color: pink;*/
+		}
+
+		.menu{
+			/*background: url({% static "menu-background.jpg" %});*/
+			background-color: #3498DB;
+			height: 60px;
+			width: 1510px;
+			
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			float: left;
+		}
+
+		.menu #link{
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+		}
+
+		.menu #link #li1 a{
+			color: white;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+               color: magenta;
+        }
+
+        .menu2{
+        	height: 100px;
+        	width: 1300px;
+        	margin-left: 150px;
+        }
+
+        .menu2 #logo{
+        	height: 100px;
+        	width: 470px;
+        	background: url({% static "logo.jpg" %});
+        	float: left;
+        }
+
+        .menu2 #link2{
+        	height: 100px;
+        	width: 800px;
+        	float: left;
+        }
+
+        .menu2 #link2 #li2{
+        	list-style: none;
+			position: relative;
+			left: 80px;
+			padding-top: 10px;
+			padding-right: 20px;
+        }
+
+        .menu2 #link2 #li2 li{
+        	display: inline;
+			margin: 20px;
+        }
+
+        .menu2 #link2 #li2 a{
+			text-decoration: none;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+               color: #43C6DB;
+        }
+
+        #pageDisplay{
+        	height: 50px;
+        	width: 1510px;
+        	background-color: #3498DB;
+        	/*background: url({% static "menu-background.jpg" %});*/
+        }
+
+        #Main{
+			height: 650px;
+        	width: 1510px;
+        	background-image: url({% static "Donate-Background-Image.jpg" %});
+        
+        }
+        
+        #Main1
+         {
+         	height: 400px;
+         	width: 550px;
+ /*        	background-image: url({% static "Donate1.jpg" %});*/
+         	display: inline-block;
+        	*display: inline;
+        	margin-left: 50px;
+        	padding-top: 13px;
+        	top: -240px;
+         }
+
+         #Main2
+         {
+         	height: 600px;
+         	width: 600px;
+         	display: inline-block;
+        	*display: inline;
+        	margin-left: 90px;
+        	padding-top: 50px;
+        	top: 10px;
+        	color: dark black;
+         }
+    
+	</style>
+</head>
+<body>
+	<div id="container">
+		
+		<div class="menu">
+			<div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px black;color: yellow;font-size: 28px"> HEALTH WAVE </h2> </a> </div>
+			<div id="link">
+				<ol id="li1">
+					<h4>
+						<li> <a href="/appointment"> Book Appointment </a> </li>
+						<li id="select"> <a href="/donate"> Donate </a> </li>
+						<li> <a href="/login"> Login </a> </li>
+					</h4>
+				</ol>
+			</div>
+		</div>
+
+		<div class="menu2">
+			<a href="/home"> <div id="logo"></div> </a>
+			<div id="link2">
+				<ol id="li2">
+					<h3>
+						<li> <a href="/home"> Home </a> </li>
+						<li> <a href="/department"> Department </a> </li>
+						<li> <a href="/about"> About </a> </li>
+						<li> <a href="/contact"> Contact Us </a> </li>
+					</h3>
+				</ol>
+			</div>
+		</div>
+
+		<div id="pageDisplay">
+			<center> <h4 style="text-shadow:2px 2px 1px black;color: white;margin-top: 0px;font-size: 28px;"> Donation Form </h4> </center>
+		</div>
+
+		<div id="Main">
+			<div id="Main1" style="position: relative;"></div>
+			<div id="Main2" style="position: relative;">
+				<form action="/donationSubmit">
+					<center>
+					<table align="center" cellspacing="10px" cellpadding="10px">
+						<tr>
+							<td>First Name</td>
+							<td><input type="text" name="fname"></td>
+						</tr>
+						<tr>
+							<td>Last Name</td>
+							<td><input type="text" name="lname"></td>
+						</tr>
+						<tr>
+							<td>Email:</td>
+							<td><input type="text" name="email"></td>
+						</tr>
+						<tr>
+							<td>Country:</td>
+							<td>
+								<select name="country" id="country">
+									<option selected>--------Country---------</option>
+									<option value="India">India</option>
+									<option value="U S A">USA</option>
+									<option value="China">China</option>
+									<option value="japan">Japan</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>Address:</td>
+							<td><input type="text" name="address"></td>
+						</tr>
+						<tr>
+							<td>City:</td>
+							<td><input type="text" name="city"></td>
+						</tr>
+						<tr>
+							<td>Mobile no:</td>
+							<td>
+			           			<!-- 	<select name="D">
+								<option value="1">+91</option>
+								<option value="2">93</option>
+								<option value="3">213</option>
+								<option value="4">54</option>
+								<option value="5">61</option>
+								<option value="6">32</option>
+								<option value="7">55</option>
+								<option value="8">855</option>
+								<option value="9">236</option>
+								</select> -->
+								<input type="text" name="number">
+							</td>
+						</tr>
+						<tr>
+							<td>Postcode:</td>
+							<td><input type="text" name="postcode"> </td>
+						</tr>
+					 	<tr>
+							<td>Type of Donation</td>
+							<td>
+								<input type="radio" name="donationtype" id="Love Offering" value="Love Offering">
+								<label for="Love Offering">Love Offering</label><br>
+								<input type="radio" name="donationtype" id="Building Expansion" value="Building Expansion">
+								<label for="Building Expansion">Building Expansion</label><br>
+								<input type="radio" name="donationtype" value="One Time Donation" id="One Time Donation">
+								<label for="One Time Donation">One Time Donation</label>
+							</td>
+						</tr>
+						<tr>
+							<td>Donation Amount</td>
+							<td><input type="text" name="amount"></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<center>
+									<input type="submit" value="Donate" onclick="Donate">
+									<input type="reset" value="Reset">
+								</center>
+							</td>
+						</tr>
+					</table>
+					</center>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 776px;
+			width: 1510px;
+			/*background-color: pink;*/
+		}
+
+		.menu{
+			background-color: #3498DB;
+			height: 60px;
+			width: 1510px;	
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			/*margin-top: 10px;*/
+			float: left;
+		}
+
+		.menu #link{
+			/*background-color: green;*/
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+		}
+
+		.menu #link #li1 a{
+			color: white;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+               color: magenta;
+        }
+
+        .menu2{
+        	height: 100px;
+        	width: 1200px;
+        	margin-left: 150px;
+        }
+
+        .menu2 #logo{
+        	height: 100px;
+        	width: 470px;
+        	background: url({% static "logo.jpg" %});
+        	float: left;
+        }
+
+        .menu2 #link2{
+        	height: 100px;
+        	width: 730px;
+        	float: left;
+        }
+
+        .menu2 #link2 #li2{
+        	list-style: none;
+			position: relative;
+			left: 80px;
+			padding-top: 10px;
+			padding-right: 20px;
+        }
+
+        .menu2 #link2 #li2 li{
+        	display: inline;
+			margin: 20px;
+        }
+
+        .menu2 #link2 #li2 a{
+			text-decoration: none;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+               color: #43C6DB;
+        }
+
+        .menu3{
+			/*background: url({% static "menu-background.jpg" %});*/
+			background-color: #3498DB;
+			height: 60px;
+			width: 1500px;
+			
+		}
+		.menu3 #appointment{
+			height: 60px;
+			width: 580px;
+			float: left;
+			margin-left: 615px;
+		}
+
+		#pageDisplay{
+        	height: 50px;
+        	width: 1510px;
+        	/*background: url({% static "menu-background.jpg" %});*/
+        	background-color: #3498DB;
+        }
+
+		 #PicSection{
+        	background: url({% static "contact-background-image.jpg" %});
+        	height: 620px;
+        	width: 1510px;
+        	/*margin-left: 150px;*/
+        }
+
+       	#lpart{
+                height: 310px;
+                width: 250px;
+                float: left;
+                background-color: #82CAFF;
+                 display: inline-block;
+	        	*display: inline;
+	        	margin-left: 10px;
+	        	padding-top: 5px;
+	        	top: 10px;
+	        	color: dark black;
+        }
+
+        #mpart{
+                height: 600px;
+                width: 900px;
+                float: left;
+                background-color:#82CAFF;   
+                display: inline-block;
+	        	*display: inline;
+	        	margin-left: 100px;
+	        	padding-top: 5px;
+	        	top: 10px;
+	        	color: dark black;
+	    }
+     
+	</style>
+</head>
+<body>
+	<div id="container">
+		
+		<div class="menu">
+			<div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px black;color: yellow;font-size: 28px"> HEALTH WAVE </h2> </a> </div>
+			<div id="link">
+				<ol id="li1">
+					<h4>
+						<li> <a href="/appointment"> Book Appointment </a> </li>
+						<li> <a href="/donate"> Donate </a> </li>
+						<li> <a href="/login"> Login </a> </li>
+					</h4>
+				</ol>
+			</div>
+		</div>
+
+		<div class="menu2">
+			<div id="logo"></div>
+			<div id="link2">
+				<ol id="li2">
+					<h3>
+						<li> <a href="/home"> Home </a> </li>
+						<li> <a href="/department"> Department </a> </li>
+						<li> <a href="/about"> About </a> </li>
+						<li id="select2"> <a href="/contact"> Contact Us </a> </li>
+					</h3>
+				</ol>
+			</div>
+		</div>
+		
+		<div id="pageDisplay">
+			<center> <h4 style="text-shadow:2px 2px 1px black;color: white;margin-top: 0px;font-size: 28px;"> Contact Us </h4> </center>
+		</div>
+
+		<div id="PicSection">
+			<div id="lpart" style="position: relative;">
+				<center style="margin-top: 5px;color:black;"> <strong> Contact Us </strong> </center>
+				<div style="margin-left: 10px;height: 310px;width: 230px;margin-top: 10px;color: black;font-style: italic;text-shadow:2px 2px 2px #82CAFF">
+                	<br>For further inquiries, help or suggestions. You may contact us through the following:<br><br><br>
+              		<strong> Phone </strong> : <p style="margin-top: -17px;margin-left: 50px;color: black;font-style: normal;text-shadow: none;"> 8989430759 <br> 9824383111 </p>
+                	<strong> Mail </strong>:<p style="margin-top: -18px;margin-left: 45px;color: black;font-style: normal;text-shadow: none;">anichourey@gmail.com  <br>risshukla@gmail.com </p>
+               		<strong>Address</strong>: <p style="margin-top: -18px;margin-left: 60px;color: black;font-style: normal;text-shadow: none;"> HB-101/102 Khajuri Nagar, Near Palasiya Sq, Indore </p>
+            	</div>
+			</div>
+
+			<div id="mpart" style="position: relative;">
+            	<div style="margin-left: 20px;margin-top: 10px;height: 500px;width: 850px;">
+                		<center><h2> Send us a Message </h2> </center>
+                		<form action="">
+                    	<div style="width: 350px;height: 200px;float: left;margin-top: 30px;margin-left: 150px;">
+                        	First Name <br><br><input type="text" name="fname" id="fname" placeholder="Enter First Name"><br><br><br>
+                        	Email <br><br><input type="email" name="email" id="email" placeholder="Enter Mail">
+                    	</div>
+                    	<div style="width: 300px;height: 200px;float: left;margin-top: 30px;margin-left: 10px">
+                        	Last Name <br><br><input type="text" name="lname" id="lname" placeholder="Enter Last Name"><br><br><br>
+                        	Contact Number <br><br><input type="text" name="cont_no" id="cont_no" placeholder="Enter Contact Number">
+                    	</div>
+                    	<p style="margin-left: 240px;">
+                    		Message <br><br><textarea name="message" id="message" cols="50" rows="7" placeholder="Enter your query"></textarea></p>
+                    		<center><br><br><input type="submit" name="subit"><input type="reset" value="Reset"></center>
+                		</form>
+            	</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 776px;
+			width: 1520px;
+			/*background-color: pink;*/
+		}
+
+		.menu{
+			/*background: url({% static "menu-background.jpg" %});*/
+			background-color: #a7c1d9;
+			height: 60px;
+			width: 1520px;
+			/*background-color: red;*/
+			/*margin-left: 150px;*/
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			/*margin-top: 10px;*/
+			float: left;
+		}
+
+		.menu #link{
+			/*background-color: green;*/
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+			margin-left: 600px;
+		}
+
+		.menu #link #li1 a{
+			color: #2B4157;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+               color: magenta;
+        }
+
+        .menu2{
+        	height: 100px;
+        	width: 1370px;
+        	margin-left: 150px;
+        }
+
+        .menu2 #logo{
+        	height: 100px;
+        	width: 470px;
+        	background: url({% static "logo.jpg" %});
+        	float: left;
+        }
+
+        .menu2 #link2{
+        	height: 100px;
+        	width: 900px;
+        	float: left;
+        }
+
+        .menu2 #link2 #li2{
+        	list-style: none;
+			position: relative;
+			/*left: 80px;*/
+			padding-top: 10px;
+			padding-right: 20px;
+        }
+
+        .menu2 #link2 #li2 li{
+        	display: inline;
+			margin: 20px;
+        }
+
+        .menu2 #link2 #li2 a{
+			text-decoration: none;
+			color: magenta;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+               color: #43C6DB;
+        }
+
+        #PicSection{
+        	background: url({% static "admin-page-background-image.png" %});
+        	height: 620px;
+        	width: 1520px;
+        	/*margin-left: 150px;*/
+        }
+
+        #PicSection #Quote{
+        	height: 300px;
+        	width: 500px;
+        	/*background-color: blue;*/
+        	margin-left: 170px;
+        	padding-top: 180px;
+        	top: 150px;
+        	color: #2B4157;
+        	float: left;
+        }
+
+        #PicSection #Link3{
+        	background-color: #a7c1d9;
+        	height: 550px;
+        	width: 400px;
+        	float: left;
+        	margin-left: 150px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+	<div id="container">
+		
+		<div class="menu">
+			<div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px #a7c1d9;color: #2B4157;font-size: 28px"> HEALTH WAVE </h2> </a> </div>
+			<div id="link">
+				<ol id="li1">
+					<h4>
+						<li> <a href="/signup">SignUp</a> </li>
+					</h4>
+				</ol>
+			</div>
+		</div>
+
+		<div class="menu2">
+			<div id="logo"></div>
+			<div id="link2">
+				<ol id="li2">
+					<h3>
+						<li> <a href="/departmentAdminPage"> Department_View </a> </li>
+						<li> <a href="/doctorAdminPage"> Doctors_View </a> </li>
+						<li id="select2"> <a href="/appointmentAdminPage"> Appointment_View </a> </li>
+						<li> <a href="/loginAdminPage"> Login_View </a> </li>
+						<li> <a href="/donationAdminPage"> Donate_View </a> </li>
+					</h3>
+				</ol>
+			</div>
+		</div>
+
+		<div id="PicSection">
+				<div id="Quote">
+					<h1 style="font-size: 50px"> <i> EVERY DAY IS BETTER WITH YOU BY MY SIDE</i> </h1>
+				</div>
+
+				<div id="Link3">
+					<center>
+						<h2> Fill New Details </h2>
+
+						<form action="/UpdateAppointmentDataAdmin">
+							<table>
+								<tr>
+									<td> Appointment Id </td>
+									<td> <input type="text" name="app_id" value="{{record.0}}" readonly> </td>
+								</tr>
+								<tr>
+									<td> Appointment For </td>
+									<td> <input type="text" name="app_for" value="{{record.1}}" readonly> </td>
+								</tr>
+								<tr>
+									<td> First Name </td>
+									<td> <input type="text" name="app_f_nm" value="{{record.2}}"> </td>
+								</tr>
+								<tr>
+									<td> Last Name </td>
+									<td> <input type="text" name="app_l_nm" value="{{record.3}}"> </td>
+								</tr>
+								<tr>
+									<td> Gender </td>
+									<td> <input type="text" name="gen" value="{{record.4}}"> </td>
+								</tr>
+								<tr>
+									<td> Mobile No </td>
+									<td> <input type="text" name="mob_no" value="{{record.5}}"> </td>
+								</tr>
+								<tr>
+									<td> Birth Date </td>
+									<td> <input type="text" name="b_date" value="{{record.6}}"> </td>
+								</tr>
+								<tr>
+									<td> Birth Month </td>
+									<td> <input type="text" name="b_month" value="{{record.7}}"> </td>
+								</tr>
+								<tr>
+									<td> Birth Year </td>
+									<td> <input type="text" name="b_year" value="{{record.8}}"> </td>
+								</tr>
+								<tr>
+									<td> Address </td>
+									<td> <input type="text" name="addr" value="{{record.9}}"> </td>
+								</tr>
+								<tr>
+									<td> E-Mail </td>
+									<td> <input type="text" name="email" value="{{record.10}}"> </td>
+								</tr>
+								<tr>
+									<td> State </td>
+									<td> <input type="text" name="state" value="{{record.11}}"> </td>
+								</tr>
+								<tr>
+									<td> City </td>
+									<td> <input type="text" name="city" value="{{record.12}}"> </td>
+								</tr>
+								<tr>
+									<td> Health Insurance </td>
+									<td> <input type="text" name="hea_insu" value="{{record.13}}"> </td>
+								</tr>
+								<tr>
+									<td> Attended Facility </td>
+									<td> <input type="text" name="att_faci" value="{{record.14}}"> </td>
+								</tr>
+								<tr>
+									<td> Appointment Type </td>
+									<td> <input type="text" name="app_type" value="{{record.15}}"> </td>
+								</tr>
+								<tr>
+									<td colspan="2"> <center> <input type="submit" value="Update Data"> </center> </td>
+								</tr>
+							</table>
+						</form>
+					</center>
+				</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 776px;
+			width: 1510px;
+		}
+
+		.menu{
+			background-color: #a7c1d9;
+			height: 60px;
+			width: 1510px;
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			/*margin-top: 10px;*/
+			float: left;
+		}
+
+		.menu #link{
+			/*background-color: green;*/
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+			margin-left: 600px;
+		}
+
+		.menu #link #li1 a{
+			color: #2B4157;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+        color: magenta;
+    }
+
+    .menu2{
+        height: 100px;
+        width: 1370px;
+        margin-left: 150px;
+    }
+
+    .menu2 #logo{
+        height: 100px;
+      	width: 470px;
+      	background: url({% static "logo.jpg" %});
+      	float: left;
+    }
+
+    .menu2 #link2{
+        height: 100px;
+        width: 900px;
+        float: left;
+    }
+
+    .menu2 #link2 #li2{
+      	list-style: none;
+	   		position: relative;
+		  	/*left: 80px;*/
+			  padding-top: 10px;
+			  padding-right: 20px;
+    }
+
+    .menu2 #link2 #li2 li{
+       	display: inline;
+		  	margin: 20px;
+    }
+
+    .menu2 #link2 #li2 a{
+			   text-decoration: none;
+         color: #43C6DB;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+        color: magenta;
+    }
+    
+    #mpart{
+        background-color: #a7c1d9;
+        height: 700px;
+        width: 700px;
+        float: left;
+        margin-left: 380px;
+    }
+
+    #pageDisplay{
+        height: 50px;
+        width: 1510px;
+        /*background: url({% static "menu-background.jpg" %});*/
+        background-color: #a7c1d9;
+    }    
+        
+		#Main2{
+        height: 730px;
+        width: 730px;
+        background-color:#a7c1d9;
+        display: inline-block;
+        *display: inline;
+        margin-left: 390px;
+        padding-top: 5px;
+        top: 10px;
+        color: dark black;
+    }
+
+    /*table, th, td {
+        border: 1px solid black;
+    }*/
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		
+		<div class="menu">
+			<div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px #a7c1d9;color: #2B4157;font-size: 28px"> HEALTH WAVE </h2> </a> </div>
+			<div id="link">
+				<ol id="li1">
+					<h4>
+						<li id="select"> <a href="/signup">SignUp</a> </li>
+					</h4>
+				</ol>
+			</div>
+		</div>
+
+		<div class="menu2">
+			<div id="logo"></div>
+			<div id="link2">
+				<ol id="li2">
+					<h3>
+						<li> <a href="/departmentAdminPage"> Department_View </a> </li>
+            <li> <a href="/doctorAdminPage"> Doctors_View </a> </li>
+            <li> <a href="/appointmentAdminPage"> Appointment_View </a> </li>
+            <li> <a href="/loginAdminPage"> Login_View </a> </li>
+            <li> <a href="/showDonationData"> Donate_View </a> </li>
+					</h3>
+				</ol>
+			</div>
+		</div>
+		
+    <div id="pageDisplay">
+      <center> <h4 style="text-shadow:2px 2px 1px black;color: white;margin-top: 0px;font-size: 28px;"> Employee Registration </h4> </center>
+    </div>
+
+		<div class="menu4">
+		  <div id="Main2" style="position: relative;">
+     	  <form action="/signupAdmin">
+          <table align="center" cellpadding="10px" cellspacing="10px">
+          <caption><h1 style="color: black"> Create An Account </h1></caption>
+
+          <tr>
+            <td>First Name</td>
+            <td><input type="text" name="fname" id="fname" placeholder="Enter First Name"></td>
+            <td><span id="span_fname"></span></td>
+          </tr>
+        
+          <tr>
+            <td>Last Name</td>
+            <td><input type="text" name="lname" id="lname" placeholder="Enter Last Name"></td>
+            <td><span id="span_lname"></span></td>
+          </tr>
+        
+          <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" id="email" placeholder="Enter Email"></td>
+            <td><span id="span_email"></span></td>
+          </tr>
+        
+          <tr>
+            <td>Password</td>
+            <td><input type="password" name="pass" id="pass" placeholder="Enter Password"></td>
+            <td><span id="span_password"></td>
+          </tr>
+        
+          <tr>
+            <td>Re-Enter Password</td>
+            <td><input type="password" name="repass" id="repass" placeholder="Re-enter Password"></td>
+            <td><span id="span_repassword"></td>
+          </tr>
+        
+          <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+              <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+            </td>
+            <td><span id="span_gender"></td>
+          </tr>
+        
+          <tr>
+            <td>Contact No</td>
+            <td><input type="text" name="cont_no" id="cont_no" placeholder="Enter Contact Number"></td>
+            <td><span id="span_contact"></td>
+          </tr>
+        
+          <tr>
+            <td>Address</td>
+            <td><textarea name="address" id="address" cols="10" rows="4" placeholder="Enter Address here"></textarea></td>
+            <td><span id="span_address"></td>
+          </tr>
+        
+          <tr>
+            <td>State</td>
+            <td>
+              <select name="state" id="state">
+                <option selected>--------Select--------</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Gujrat">Gujrat</option>
+              </select>
+            </td>
+            <td><span id="span_state"></td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <center> <br><input type="submit" value="Sign Up" id="sub1" onclick="return validate();">
+                  <input type="reset" value="Reset"> </center>
+            </td>
+          </tr>
+      </table>
+      </form>
+
+      <script>
+          function validate()
+          {
+            var f_name=document.getElementById('fname');
+            var l_name=document.getElementById('lname');
+            var e_mail=document.getElementById('email');
+            var pass_word=document.getElementById('pass');
+            var re_pass=document.getElementById('repass');
+            var ma_le=document.getElementById('male');
+            var fe_male=document.getElementById('female');
+            var cont_num=document.getElementById('cont_no');
+            var add_ress=document.getElementById('address');
+            var sta_te=document.getElementById('state');
+          
+            if(f_name.value.trim()==="")
+            {
+              var span_fname=document.getElementById('span_fname');
+              span_fname.innerHTML="Name is required";
+              span_fname.style.color="red";
+              f_name.focus();
+              return false;
+            }
+            else
+            {
+              regu=/^[A-Za-z]+$/;
+              if(regu.test(f_name.value))
+              {
+                var span_fname=document.getElementById('span_fname');
+                span_fname.innerHTML="Valid";
+                span_fname.style.color="white";
+              }
+              else
+              {
+                var span_fname=document.getElementById('span_fname');
+                span_fname.innerHTML="Invalid";
+                span_fname.style.color="red";
+                f_name.focus();
+                return false;
+              }
+            }
+
+            if(l_name.value.trim()==="")
+            {
+              var span_lname=document.getElementById('span_lname');
+              span_lname.innerHTML="Can't leave blank";
+              span_lname.style.color="red";
+              l_name.focus();
+              return false;
+            }
+            else
+            {
+              regu1=/^[A-Za-z]+$/;
+              if(regu1.test(l_name.value))
+              {
+                var span_lname=document.getElementById('span_lname');
+                span_lname.innerHTML="Valid";
+                span_lname.style.color="white";
+              }
+              else
+              {
+                var span_lname=document.getElementById('span_lname');
+                span_lname.innerHTML="Invalid";
+                span_lname.style.color="red";
+                l_name.focus();
+                return false;
+              }
+            }
+
+            if(e_mail.value.trim()==="")
+            {
+              var span_email=document.getElementById('span_email');
+              span_email.innerHTML="Can't leave blank";
+              span_email.style.color="red";
+              e_mail.focus();
+              return false;
+            }
+            else
+            {
+              var regu2=/^\w+([\._]?\w+)*@\w+([\._]?\w+)*(\.\w{2,3})+$/;
+              if(regu2.test(e_mail.value))
+              {
+                var span_email=document.getElementById('span_email');
+                span_email.innerHTML="Valid";
+                span_email.style.color="white";           
+              }
+              else
+              {
+                var span_email=document.getElementById('span_email');
+                span_email.innerHTML="InValid";
+                span_email.style.color="red";
+                e_mail.focus();
+                return false;
+              }
+            }
+
+            if(pass_word.value.trim()==="")
+            {
+              var span_password=document.getElementById('span_password');
+              span_password.innerHTML="Can't Leave Blank";
+              span_password.style.color="red";
+              pass_word.focus();
+              return false;
+            }
+            else
+            {
+              var regu3=/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+]).{8,}$/;
+              if(regu3.test(pass_word.value))
+              {
+                var span_password=document.getElementById('span_password');
+                span_password.innerHTML="Valid";
+                span_password.style.color="white"; 
+              }
+              else
+              {
+                var span_password=document.getElementById('span_password');
+                span_password.innerHTML="InValid";
+                span_password.style.color="red"; 
+                pass_word.focus();
+                return false;
+              }   
+            }
+
+            if(re_pass.value.trim()==="")
+            {
+              var span_repassword=document.getElementById('span_repassword');
+              span_repassword.innerHTML="Can't Leave Blank";
+              span_repassword.style.color="red";
+              re_pass.focus();
+              return false;
+            }
+            else
+            {
+              var regu4=/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+]).{8,}$/;
+              if(regu4.test(re_pass.value))
+              {
+                var span_repassword=document.getElementById('span_repassword');
+                span_repassword.innerHTML="Valid";
+                span_repassword.style.color="white"; 
+              }
+              else
+              {
+                var span_repassword=document.getElementById('span_repassword');
+                span_repassword.innerHTML="InValid";
+                span_repassword.style.color="red"; 
+                re_pass.focus();
+                return false;
+              }   
+            }
+
+            /*if(pass_word.value.trim()!=re_pass.value.trim())
+            {
+              alert("Password and Re-Enter Password should be same!!!!!");
+              returnToPreviousPage();
+              return false;
+            }*/
+
+            if(ma_le.checked===false && fe_male.checked===false)
+            {
+              var span_gender=document.getElementById('span_gender');
+              span_gender.innerHTML="Select Gender";
+              span_gender.style.color="red";
+              ma_le.focus();
+              return false;
+            }
+
+            if(cont_num.value.trim()==="")
+            {
+              var span_contact=document.getElementById('span_contact');
+              span_contact.innerHTML="Can't Leave Blank";
+              span_contact.style.color="red";
+              cont_num.focus();
+              return false;
+            }
+            else
+            {
+              regu6=/^[789][0-9]{9}$/;
+              if(regu6.test(cont_num.value))
+              {
+                var span_contact=document.getElementById('span_contact');
+                span_contact.innerHTML="Valid";
+                span_contact.style.color="white";
+              }
+              else
+              {
+                var span_contact=document.getElementById('span_contact');
+                span_contact.innerHTML="Invalid";
+                span_contact.style.color="red";
+                cont_num.focus();
+                return false;
+              }
+            }
+          }
+        </script>
+		  </div>
+    </div>
+	 </div>
+   <!-- {% if data == 1 %}
+      <script type="text/javascript">
+        alert("Admin Registered Succesfully!!")
+      </script>
+    {% endif %} -->
+</body>
+</html>

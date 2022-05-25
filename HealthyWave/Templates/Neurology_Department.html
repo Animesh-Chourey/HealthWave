@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 776px;
+			width: 1510px;
+			/*background-color: pink;*/
+		}
+
+		.menu{
+			background-color: #3498DB;
+            /*background: url({% static "menu-background.jpg" %});*/
+			height: 60px;
+			width: 1510px;
+			/*background-color: red;*/
+			/*margin-left: 150px;*/
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			/*margin-top: 10px;*/
+			float: left;
+		}
+
+		.menu #link{
+			/*background-color: green;*/
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+		}
+
+		.menu #link #li1 a{
+			color: white;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+               color: magenta;
+        }
+
+        .menu2{
+        	height: 100px;
+        	width: 1300px;
+        	margin-left: 150px;
+        }
+
+        .menu2 #logo{
+        	height: 100px;
+        	width: 470px;
+        	background: url({% static "logo.jpg" %});
+        	float: left;
+        }
+
+        .menu2 #link2{
+        	height: 100px;
+        	width: 800px;
+        	float: left;
+        }
+
+        .menu2 #link2 #li2{
+        	list-style: none;
+			position: relative;
+			left: 80px;
+			padding-top: 10px;
+			padding-right: 20px;
+        }
+
+        .menu2 #link2 #li2 li{
+        	display: inline;
+			margin: 20px;
+        }
+
+        .menu2 #link2 #li2 a{
+			text-decoration: none;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+               color: #43C6DB;
+        }
+
+        #pageDisplay{
+        	height: 50px;
+        	width: 1510px;
+        	background-color: #3498DB;
+            /*background: url({% static "menu-background.jpg" %});*/
+        }
+
+        #PicSection{
+        	background: url({% static "department-background-image-blurred.jpg" %});
+        	height: 851px;
+        	width: 1510px;
+        	/*margin-left: 150px;*/
+        }
+
+        #PicSection #Department_Pic{
+            height: 450px;
+            width: 500px;
+            background: url({% static "neurology1.jpg" %});
+            /*background-color: red;*/
+            float: left;
+            margin-top: 10px;
+            margin-left: 20px; 
+        }
+
+        #PicSection #Department_Description{
+            height: 500px;
+            width: 950px;
+            /*background-color: blue;*/
+            float: left;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        
+        #doctor_layout{
+            height: 341px;
+            width: 1400px;
+            float: left;
+            /*background-color: purple;*/
+            margin-left: 50px;
+
+        }
+
+        #doctor_layout ul{
+            list-style:none;
+            padding: 15px;
+        }
+
+        #doctor_layout ul li{
+            float:left;
+            margin-left: 60px;
+            margin-bottom: 20px;
+        }
+        #doctor_layout ul li h4{
+            margin-left: 30px;
+            margin-top: 5px;
+        }
+        #doctor_layout ul li h4 a{
+            text-decoration: none;
+            color: #1CC2F9;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+        <div class="menu">
+            <div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px black;color: yellow;font-size: 28px"> HEALTHY WAVE </h2> </a> </div>
+            <div id="link">
+                <ol id="li1">
+                    <h4>
+                        <li> <a href="/appointment"> Book Appointment </a> </li>
+                        <li> <a href="/donate"> Donate </a> </li>
+                        <li> <a href="/login"> Login </a> </li>
+                    </h4>
+                </ol>
+            </div>
+        </div>
+
+        <div class="menu2">
+            <a href="/home"> <div id="logo"></div> </a>
+            <div id="link2">
+                <ol id="li2">
+                    <h3>
+                        <li> <a href="/home"> Home </a> </li>
+                        <li id="select2"> <a href="/department"> Department </a> </li>
+                        <li> <a href="/about"> About </a> </li>
+                        <li> <a href="/contact"> Contact Us </a> </li>
+                    </h3>
+                </ol>
+            </div>
+        </div>
+
+        <div id="pageDisplay">
+            <center> <h1 style="color: white;text-shadow:3px 3px 1px black;margin-top: 0px;"> Neurology Department </h1> </center>
+        </div>
+        
+        <div id="PicSection">
+            <div id="Department_Pic"></div>
+            <div id="Department_Description" style="font-size: 17px">
+                Our team of consultants in Neurology are amongst the finest in the world, be it in academic qualifications, clinical expertise or hands-on experience. Committed to patient centric care , they contribute to our record of unmatched clinical outcomes in Neurosciences.
+                The Neurologists, Neurosurgeons, Critical care specialists, Neuro Recovery Intensive Care facilities. Neurological specialists at Bombay Hospital achieve outcomes matching those of the leading institutions across the globe hence patients are referred to our institution from all over the country..<br>
+                HealthWave Hospital Indore is renowned for providing specialised care in Neurology when it comes to Alzheimer’s Disease, Brain Tumour Management, Complex Craniovertebral Junction surgeries, Epilepsy, Head injury management, Minimal Invasive spine surgeries, Normal pressure hydrocephalus, Neuro-Rehabilitation, Parkinson’s Disease, Stroke, Trigeminal Neuralgia management, Wilson Disease, movement disorders and headaches.<br>
+                The neurology consultants are the leaders of the stroke team that also comprises of neuroradiologists, neurosurgeons and interventional specialists trained in acute stroke care. The procedures offered are intravenous, intra-arterial and mechanical thrombolysis, intracranial and extracranial cerebral vessel angioplasty and stenting, decompressive craniectomy for large infarcts, evacuation of the intracerebral clots using penumbra device and stereotactic technique<br>
+                The department of neurology at HealthWave Hospital Indore, is supported by well equipped neuro intensive care unit facilities like invasive intra cranial pressure monitoring and bedside Electro Encephalo Gram (EEG) monitoring for managing critically ill patients with neurological illnesses. Neurologists are experienced to administer botulinum toxin injections in various movement disorders and spasticity.<br>
+                <p> <b>Treatments and Procedures:- </b>
+                    <ul>
+                        <li> Diagnosis and management of various seizure disorders </li>
+                        <li> Management and treatment of stroke </li>
+                        <li> Thrombolysis with tissue plasminogen activator (TPA) </li>
+                        <li> Management of dementia including alzheimer’s disease </li>
+                        <li> Comprehensive neuro rehabilitation including physiotherapy and occupational therapy </li>
+                        <li> Management of neuromuscular disorders, peripheral neuropathies, chronic pain, neuro-infections and sleep disorders </li>
+                    </ul>
+                </p>
+            </div>
+            <div id="doctor_layout">
+                <div style="text-align: center;height: 38px;width: 1400px;color: #686868"> <h1>Specialists</h1> </div>
+                <ul>
+                    {% for row in data %}
+                        {% for i in row %}
+                            <li> <a href=""><!--  <img src="{% static '{{j}}.jpg' %}"> --><img src="../static/Doctors/{{i}}.jpg"> </a>
+                                 <h4> <a href="">  {{i}} </a> </h4>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>        
+
+</body>
+</html>

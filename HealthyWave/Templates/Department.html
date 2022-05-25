@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 770px;
+			width: 1520px;
+			/*background-color: pink;*/
+		}
+
+		.menu{
+			/*background: url({% static "menu-background.jpg" %});*/
+			background-color: #3498DB;
+			height: 60px;
+			width: 1520px;
+			/*background-color: red;*/
+			/*margin-left: 150px;*/
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			/*margin-top: 10px;*/
+			float: left;
+		}
+
+		.menu #link{
+			/*background-color: green;*/
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+		}
+
+		.menu #link #li1 a{
+			color: white;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+               color: magenta;
+        }
+
+        .menu2{
+        	height: 100px;
+        	width: 1300px;
+        	margin-left: 150px;
+        }
+
+        .menu2 #logo{
+        	height: 100px;
+        	width: 470px;
+        	background: url({% static "logo.jpg" %});
+        	float: left;
+        }
+
+        .menu2 #link2{
+        	height: 100px;
+        	width: 800px;
+        	float: left;
+        }
+
+        .menu2 #link2 #li2{
+        	list-style: none;
+			position: relative;
+			left: 80px;
+			padding-top: 10px;
+			padding-right: 20px;
+        }
+
+        .menu2 #link2 #li2 li{
+        	display: inline;
+			margin: 20px;
+        }
+
+        .menu2 #link2 #li2 a{
+			text-decoration: none;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+               color: #43C6DB;
+        }
+
+        #pageDisplay{
+        	height: 50px;
+        	width: 1520px;
+        	background-color: #3498DB;
+        	/*background: url({% static "menu-background.jpg" %});*/
+        }
+
+        #PicSection{
+        	background: url({% static "department-background-image-blurred.jpg" %});
+        	height: 570px;
+        	width: 1510px;
+        	/*margin-left: 150px;*/
+        }
+
+        #department_layout{
+            height: 500px;
+            width: 1400px;
+            float: left;
+            /*background-color: red;*/
+            margin-top: 65px;
+            margin-left: 50px;
+        }
+
+        #department_layout ul{
+            list-style:none;
+            padding: 15px;
+        }
+
+        #department_layout ul li{
+            float:left;
+            margin-left: 60px;
+            margin-bottom: 20px;
+        }
+        #department_layout ul li h4{
+            margin-left: 30px;
+            margin-top: 5px;
+        }
+        #department_layout ul li h4 a{
+            text-decoration: none;
+            color: #1CC2F9;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+
+	<div id="container">
+		
+		<div class="menu">
+			<div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px black;color: yellow;font-size: 28px"> HEALTH WAVE </h2> </a> </div>
+			<div id="link">
+				<ol id="li1">
+					<h4>
+						<li> <a href="/appointment"> Book Appointment </a> </li>
+						<li> <a href="/donate"> Donate </a> </li>
+						<li> <a href="/login"> Login </a> </li>
+					</h4>
+				</ol>
+			</div>
+		</div>
+
+		<div class="menu2">
+			<a href="/home"> <div id="logo"></div> </a>
+			<div id="link2">
+				<ol id="li2">
+					<h3>
+						<li> <a href="/home"> Home </a> </li>
+						<li id="select2"> <a href="/department"> Department </a> </li>
+						<li> <a href="/about"> About </a> </li>
+						<li> <a href="/contact"> Contact Us </a> </li>
+					</h3>
+				</ol>
+			</div>
+		</div>
+
+		<div id="pageDisplay">
+			<center> <h4 style="text-shadow:2px 2px 1px black;color: white;margin-top: 0px;font-size: 28px;"> Departments </h4> </center>
+		</div>
+
+		<div id="PicSection">
+			<div id="department_layout">
+				<ul>
+					{% for row in data %}
+						{% for i in row %}
+							<li> <a href="/{{i}}"><!--  <img src="{% static '{{j}}.jpg' %}"> --><img src="../static/{{i}}.jpg"> </a>
+						 	 	 <h4> <a href="">  {{i}} </a> </h4>
+							</li>
+						{% endfor %}
+					{% endfor %}
+				</ul>
+			</div>	
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 776px;
+			width: 1510px;
+			/*background-color: pink;*/
+		}
+
+		.menu{
+			/*background: url({% static "menu-background.jpg" %});*/
+            background-color: #3498DB;
+			height: 60px;
+			width: 1510px;
+			/*background-color: red;*/
+			/*margin-left: 150px;*/
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			/*margin-top: 10px;*/
+			float: left;
+		}
+
+		.menu #link{
+			/*background-color: green;*/
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+		}
+
+		.menu #link #li1 a{
+			color: white;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+               color: magenta;
+        }
+
+        .menu2{
+        	height: 100px;
+        	width: 1300px;
+        	margin-left: 150px;
+        }
+
+        .menu2 #logo{
+        	height: 100px;
+        	width: 470px;
+        	background: url({% static "logo.jpg" %});
+        	float: left;
+        }
+
+        .menu2 #link2{
+        	height: 100px;
+        	width: 800px;
+        	float: left;
+        }
+
+        .menu2 #link2 #li2{
+        	list-style: none;
+			position: relative;
+			left: 80px;
+			padding-top: 10px;
+			padding-right: 20px;
+        }
+
+        .menu2 #link2 #li2 li{
+        	display: inline;
+			margin: 20px;
+        }
+
+        .menu2 #link2 #li2 a{
+			text-decoration: none;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+               color: #43C6DB;
+        }
+
+        #pageDisplay{
+        	height: 50px;
+        	width: 1510px;
+        	background-color: #3498DB;
+            /*background: url({% static "menu-background.jpg" %});*/
+        }
+
+        #PicSection{
+        	background: url({% static "department-background-image-blurred.jpg" %});
+        	height: 851px;
+        	width: 1510px;
+        	/*margin-left: 150px;*/
+        }
+
+        #PicSection #Department_Pic{
+            height: 450px;
+            width: 500px;
+            background: url({% static "Cardiology1.jpg" %});
+            background-color: red;
+            float: left;
+            margin-top: 10px;
+            margin-left: 20px; 
+        }
+
+        #PicSection #Department_Description{
+            height: 500px;
+            width: 950px;
+            /*background-color: blue;*/
+            float: left;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        
+        #doctor_layout{
+            height: 341px;
+            width: 1400px;
+            float: left;
+            /*background-color: purple;*/
+            margin-left: 50px;
+
+        }
+
+        #doctor_layout ul{
+            list-style:none;
+            padding: 15px;
+        }
+
+        #doctor_layout ul li{
+            float:left;
+            margin-left: 60px;
+            margin-bottom: 20px;
+        }
+        #doctor_layout ul li h4{
+            margin-left: 30px;
+            margin-top: 5px;
+        }
+        #doctor_layout ul li h4 a{
+            text-decoration: none;
+            color: #1CC2F9;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+        <div class="menu">
+            <div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px black;color: yellow;font-size: 28px"> HEALTHY WAVE </h2> </a> </div>
+            <div id="link">
+                <ol id="li1">
+                    <h4>
+                        <li> <a href="/appointment"> Book Appointment </a> </li>
+                        <li> <a href="/donate"> Donate </a> </li>
+                        <li> <a href="/login"> Login </a> </li>
+                    </h4>
+                </ol>
+            </div>
+        </div>
+
+        <div class="menu2">
+            <a href="/home"> <div id="logo"></div> </a>
+            <div id="link2">
+                <ol id="li2">
+                    <h3>
+                        <li> <a href="/home"> Home </a> </li>
+                        <li id="select2"> <a href="/department"> Department </a> </li>
+                        <li> <a href="/about"> About </a> </li>
+                        <li> <a href="/contact"> Contact Us </a> </li>
+                    </h3>
+                </ol>
+            </div>
+        </div>
+
+        <div id="pageDisplay">
+            <center> <h1 style="color: white;text-shadow:3px 3px 1px black;margin-top: 0px;"> Cardiology Department </h1> </center>
+        </div>
+        
+        <div id="PicSection">
+            <div id="Department_Pic"></div>
+            <div id="Department_Description" style="font-size: 17px">
+                The Cardiology department at HealthWave Hospital is determined to provide compassionate, state of the art, proficient care to heart patients at an affordable cost. Our qualified team, along with the latest technology, ensures the best possible care for a wide spectrum of heart diseases.
+                The Department of cardiology at the HealthWave Hospital provides a diagnostic and treatment service for patients referred with actual, or suspected, heart disease. It provides a comprehensive suite of diagnostic and treatment facilities, including non-invasive diagnostic facilities, and a wide range of interventional <b>cardiac</b>, <b>vascular</b> and <b>electrophysiological</b> procedures.<br>
+
+                The Department of Cardiology at HealthWave Hospital – Indore offers preventive, diagnostic and therapeutic services for cardiovascular diseases. The department has highly qualified and skilled cardiologists with expertise in all types of cardiac procedures.  The consultants practice evidence based medicine and follow international protocols which has enabled the best outcomes. HealthWave Hospital – Indore, offers round the clock services for cardiac emergencies and is equipped with the advanced infrastructure to manage and treat complicated heart conditions.<br>
+
+                The department of cardiology was started in 2003 with the establishment of HealthWave Hospital Indore. The department of interventional cardiology and catheterization was started in 2003 and since then nearly 8,100 angiographies and 2,500 angioplasties have been performed under this roof.The department consists of 2 leading full time Honorary Interventional Cardiologists.<br>
+
+                The department also has ultramodern non-invasive cardiology investigations which consists of latest colour doppler, echo machines, treadmill and holter monitoring.
+
+                <p> <b>Treatments and Procedures:- </b>
+                    <ul>
+                        <li> Electrocardiography (ECG) </li>
+                        <li> Treadmill Stress ECG (TMT) </li>
+                        <li> Coronary angiography </li>
+                        <li> Biventricular pacemaker placement and Implantable Cardiac Defibrillator (ICD) </li>
+                        <li> Renal vascular stenting </li>
+                        <li> PTA (Percutaneous Transluminal Angioplasty) </li>
+                        <li> Periodic health check-up packages for different age groups </li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div id="doctor_layout">
+                <div style="text-align: center;height: 38px;width: 1400px;color: #686868"> <h1>Specialists</h1> </div>
+                <ul>
+                    {% for row in data %}
+                        {% for i in row %}
+                            <li> <a href=""><!--  <img src="{% static '{{j}}.jpg' %}"> --><img src="../static/Doctors/{{i}}.jpg"> </a>
+                                 <h4> <a href="">  {{i}} </a> </h4>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+</body>
+</html>

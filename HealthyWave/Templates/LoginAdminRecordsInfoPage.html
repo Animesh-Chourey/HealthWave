@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<style type="text/css">
+
+		#container{
+			height: 776px;
+			width: 1520px;
+			/*background-color: pink;*/
+		}
+
+		.menu{
+			/*background: url({% static "menu-background.jpg" %});*/
+			background-color: #a7c1d9;
+			height: 60px;
+			width: 1520px;
+			/*background-color: red;*/
+			/*margin-left: 150px;*/
+		}
+
+		.menu #name{
+			height: 50px;
+			width: 580px;
+			margin-left: 160px;
+			/*margin-top: 10px;*/
+			float: left;
+		}
+
+		.menu #link{
+			/*background-color: green;*/
+			height: 50px;
+			width: 580px;
+			float: left;
+			/*margin-left: 5px;*/
+		}
+
+		.menu #link #li1{
+			list-style: none;
+			position: relative;
+		}
+
+		.menu #link #li1 li{
+			display: inline;
+			margin: 30px;
+			margin-left: 600px;
+		}
+
+		.menu #link #li1 a{
+			color: #2B4157;
+			text-decoration: none;
+		}
+
+		.menu #link #li1 a:hover , .menu #link #li1 li#select a{
+               color: magenta;
+        }
+
+        .menu2{
+        	height: 100px;
+        	width: 1370px;
+        	margin-left: 150px;
+        }
+
+        .menu2 #logo{
+        	height: 100px;
+        	width: 470px;
+        	background: url({% static "logo.jpg" %});
+        	float: left;
+        }
+
+        .menu2 #link2{
+        	height: 100px;
+        	width: 900px;
+        	float: left;
+        }
+
+        .menu2 #link2 #li2{
+        	list-style: none;
+			position: relative;
+			/*left: 10px;*/
+			padding-top: 10px;
+			padding-right: 20px;
+        }
+
+        .menu2 #link2 #li2 li{
+        	display: inline;
+			margin: 20px;
+        }
+
+        .menu2 #link2 #li2 a{
+			text-decoration: none;
+			color: magenta;
+		}
+
+		.menu2 #link2 #li2 a:hover , .menu2 #link2 #li2 li#select2 a{
+               color: #43C6DB;
+        }
+
+        #PicSection{
+        	background: url({% static "admin-page-background-image.png" %});
+        	height: 620px;
+        	width: 1520px;
+        	/*margin-left: 150px;*/
+        }
+
+        #PicSection #Quote{
+        	height: 300px;
+        	width: 500px;
+        	/*background-color: blue;*/
+        	margin-left: 15px;
+        	padding-top: 180px;
+        	top: 150px;
+        	color: #2B4157;
+        	float: left;
+        }
+
+        #PicSection #Link3{
+        	background-color: #a7c1d9;
+        	height: 300px;
+        	width: 975px;
+        	float: left;
+        	margin-left: 10px;
+        	margin-top: 50px;
+        }
+
+        #PicSection #Link3 a{
+        	text-decoration: none;
+        	color: magenta;
+        }
+
+        #PicSection #Link3 a:hover{
+        	color: blue;
+        }
+    </style>
+</head>
+<body>
+	<div id="container">
+		
+		<div class="menu">
+			<div id="name"> <a style="text-decoration: none;" href="/home"> <h2 style="text-shadow:3px 3px 1px #a7c1d9;color: #2B4157;font-size: 28px"> HEALTH WAVE </h2> </a> </div>
+			<div id="link">
+				<ol id="li1">
+					<h4>
+						<li> <a href="/signup">SignUp</a> </li>
+					</h4>
+				</ol>
+			</div>
+		</div>
+
+		<div class="menu2">
+			<div id="logo"></div>
+			<div id="link2">
+				<ol id="li2">
+					<h3>
+						<li> <a href="/departmentAdminPage"> Department_View </a> </li>
+						<li> <a href="/doctorAdminPage"> Doctors_View </a> </li>
+						<li> <a href="/appointmentAdminPage"> Appointment_View </a> </li>
+						<li id="select2"> <a href="/loginAdminPage"> Login_View </a> </li>
+						<li> <a href="/donationAdminPage"> Donate_View </a> </li>
+					</h3>
+				</ol>
+			</div>
+		</div>
+
+		<div id="PicSection">
+				<div id="Quote">
+					<h1 style="font-size: 50px"> <i> EVERY DAY IS BETTER WITH YOU BY MY SIDE</i> </h1>
+				</div>
+
+				<div id="Link3">
+					<center><h2> Admin Details </h2></center>
+					<table align="center" border="2" cellpadding="4">
+						<thead>
+							<th> ID </th>
+							<th> First Name </th>
+							<th> Last Name </th>
+							<th> E-Mail </th>
+							<th> Password </th>
+							<th> Gender </th>
+							<th> Contact No </th>
+							<th> Address </th>
+							<th> State </th>
+						</thead>
+						{% for row in data %}
+						<tr>
+							{% for i in row %}
+							<td> {{i}} </td>
+							{% endfor %}
+							<td>
+								<a href="/showUpdateLoginInfoPage?id={{row.0}}"> Update </a> -/- 
+								<a href="/deleteLoginData?id={{row.0}}"> Delete </a>
+							</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+		</div>
+	</div>
+</body>
+</html>
